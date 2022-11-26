@@ -26,10 +26,17 @@ for img in os.listdir('C:\\Users\\Bryan\\Desktop\\python bot projects\\duck bot\
 
 @client.event
 async def on_message(message):
+
 	if message.author == client.user:
 		return
+
+	if '?' in message.content:
+		await message.channel.send('quack!')
+
 	if 'duck' in message.content.lower():
 		await message.channel.send(file=discord.File('C:\\Users\\Bryan\\Desktop\\python bot projects\\duck bot\\duckphotos\\' + random.choice(images)))
+
+
 		
 #@client.event
 #async def on_member_join(member):
